@@ -1,8 +1,40 @@
 // import content
-import { useEffect } from "react";
-import { content } from "../constant/Content";
-const AkashKumarSaw = () => {
-  const { hero } = content;
+import { useEffect, useState } from "react";
+
+const AkashKumarSaw = ({state}) => {
+
+  const HeroStruct = () => {
+    const title = "";
+    const subTitle = "";
+    const image = "";
+  }
+
+  const HeroContentStruct = () => {
+    const id = 0;
+    const count = "";
+    const text = "";
+  }
+  
+  const [hero, setHero] = useState(HeroStruct);
+  const [hero_content, setHeroContent] = useState(HeroContentStruct[3]);
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const hero = await contract.hero();
+      setHero(hero);
+    }
+    contract && Func();
+  },[state])
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const heroContent = await contract.heroContent();
+      setHeroContent(heroContent);
+    }
+    contract && Func();
+  },[state])
 
   return (
     <section id="home" className="overflow-hidden">
@@ -13,8 +45,8 @@ const AkashKumarSaw = () => {
           className="absolute h-full md:w-4/12 w-8/12 top-0 right-0 bg-primaryLinear bottom-0 -z-10"
         >
           <h1 className="rotate-90 absolute top-[30%] right-[-15%] text-[#EAF2FA]">
-            {hero.firstName}{" "}
-            <span className="text-dark_primary">{hero.LastName}</span>
+            Akash 
+            <span className="text-dark_primary">Kumar Saw</span>
           </h1>
         </div>
 
@@ -25,11 +57,11 @@ const AkashKumarSaw = () => {
           <br />
           <div className="flex justify-end">
             <a href="#contact">
-              <button className="btn">{hero.btnText}</button>
+              <button className="btn">Contact Me</button>
             </a>
           </div>
           <div className="flex flex-col gap-10 mt-10">
-            {hero.hero_content.map((content, i) => (
+            {hero_content.map((content, i) => (
               <div
                 key={i}
                 data-aos="fade-down"
