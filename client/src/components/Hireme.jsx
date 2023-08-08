@@ -1,27 +1,43 @@
-import { content } from "../constant/Content";
+import { useEffect, useState } from "react";
 
 const Hireme = () => {
-  const { Hireme } = content;
+
+  const HiremeStruct = () => {
+    const para = "";
+    const imamge = "";
+    const btnText = "";
+  }
+
+  const [Hireme, setHireme] = useState(HiremeStruct);
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const hireme = await contract.hireme();
+      setHireme(hireme);
+    }
+    contract && Func();
+  },[state])
 
   return (
     <section className="bg-bg_light_primary">
       <div className="md:container px-5 pt-14">
         <h2 className="title" data-aos="fade-down">
-          {Hireme.title}
+        Hire Me
         </h2>
         <h4 className="subtitle" data-aos="fade-down">
-          {Hireme.subtitle}
+        FOR YOUR PROJECT
         </h4>
         <br />
         <div className="flex items-center md:flex-row flex-col-reverse ">
           <img
-            src={Hireme.image1}
+            src={Hireme.image}
             alt="..."
             data-aos="fade-right"
             className="max-w-sm md:block hidden"
           />
           <img
-            src={Hireme.image2}
+            src={Hireme.image}
             data-aos="fade-up"
             alt="..."
             className="max-w-sm md:hidden"
