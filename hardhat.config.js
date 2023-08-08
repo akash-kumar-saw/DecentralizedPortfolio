@@ -11,8 +11,8 @@ module.exports = {
       accounts: [`0xYOUR_MAINNET_PRIVATE_KEY`],
     },
     sophia: {
-      url: "http://sophia.example.com",
-      accounts: [`0xYOUR_SOPHIA_PRIVATE_KEY`],
+      url: "http://sepolia.example.com",
+      accounts: [`0xYOUR_SEPOLIA_PRIVATE_KEY`],
     },*/
   },
 
