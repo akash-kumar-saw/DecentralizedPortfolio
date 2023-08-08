@@ -1,10 +1,28 @@
-import { createElement, useRef } from "react";
-import { content } from "../constant/Content";
+import { createElement, useRef, useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { GrMail } from "react-icons/gr";
 
 
 const Contact = () => {
-  const { Contact } = content;
+
+  const contact = ()=> {
+    const email = "";
+    const whatsapp = "";
+    const github = "";
+  }
+
+  const [Contact, setContact] = useState(contact);
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const contact = await contract.contact();
+      setContact(contact);
+    }
+    contract && Func();
+  },[state])
+
   const form = useRef();
 
   return (
@@ -12,27 +30,32 @@ const Contact = () => {
       <Toaster />
       <div className="md:container px-5 py-14">
         <h2 className="title !text-white" data-aos="fade-down">
-          {Contact.title}
+        Contact Me
         </h2>
         <h4 className="subtitle" data-aos="fade-down">
-          {Contact.subtitle}
+        GET IN TOUCH
         </h4>
         <br />
         <div className="flex gap-10 md:flex-row flex-col">
           <div className="flex-1 flex flex-col gap-5">
-            {Contact.social_media.map((content, i) => (
-              <div
-                key={i}
-                data-aos="fade-down"
-                data-aos-delay={i * 430}
-                className="flex items-center gap-2"
-              >
-                <h4 className="text-white">{createElement(content.icon)}</h4>
-                <a className="font-Poppins" href={content.link} target="_blank">
-                  {content.text}
+              <div className="flex items-center gap-2">
+                <h4 className="text-white">{createElement(GrMail)}</h4>
+                <a className="font-Poppins" href={"mailto:${Contact.email}"} target="_blank">
+                  {Contact.email}
                 </a>
               </div>
-            ))}
+              <div className="flex items-center gap-2">
+                <h4 className="text-white">{createElement(FaWhatsapp)}</h4>
+                <a className="font-Poppins" href={"https://wa.me/${Contact.whatsapp}"} target="_blank">
+                  {Contact.whatsapp}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <h4 className="text-white">{createElement(FaGithub)}</h4>
+                <a className="font-Poppins" href={"mailto:${Contact.github}"} target="_blank">
+                  {Contact.github}
+                </a>
+              </div>
           </div>
         </div>
       </div>
