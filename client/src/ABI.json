@@ -1,0 +1,602 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_whatsapp",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_github",
+				"type": "string"
+			}
+		],
+		"name": "addContact",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_subTitle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			}
+		],
+		"name": "addHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_count",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_text",
+				"type": "string"
+			}
+		],
+		"name": "addHeroContent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_para",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_btnText",
+				"type": "string"
+			}
+		],
+		"name": "addHireme",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_githubLink",
+				"type": "string"
+			}
+		],
+		"name": "addProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_para",
+				"type": "string"
+			}
+		],
+		"name": "addService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string[30]",
+				"name": "_skills",
+				"type": "string[30]"
+			}
+		],
+		"name": "addSkill",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_review",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_designation",
+				"type": "string"
+			}
+		],
+		"name": "addTestimonial",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_whatsapp",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_github",
+				"type": "string"
+			}
+		],
+		"name": "changeContact",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_subTitle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			}
+		],
+		"name": "changeHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_heroCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_count",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_text",
+				"type": "string"
+			}
+		],
+		"name": "changeHeroContent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_para",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_btnText",
+				"type": "string"
+			}
+		],
+		"name": "changeHireme",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_projectsCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_githubLink",
+				"type": "string"
+			}
+		],
+		"name": "changeProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_servicesCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_para",
+				"type": "string"
+			}
+		],
+		"name": "changeService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_skillsCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string[30]",
+				"name": "_skills",
+				"type": "string[30]"
+			}
+		],
+		"name": "changeSkill",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_testimonialsCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_review",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_designation",
+				"type": "string"
+			}
+		],
+		"name": "changeTestimonial",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "contact",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "whatsapp",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "github",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "hero",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "subTitle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "image",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "heroContent",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "count",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "text",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "hireme",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "para",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "btnText",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "projects",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "githubLink",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "services",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "para",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "skills",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "testimonials",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "review",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "designation",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
