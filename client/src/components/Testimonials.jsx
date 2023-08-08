@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
-import { useState } from "react";
 
 const Testimonials = () => {
 

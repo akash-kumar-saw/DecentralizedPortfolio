@@ -1,6 +1,5 @@
 // import content
 import { createElement, useState, useEffect } from "react";
-import { content } from "../constant/Content";
 // import modal package
 import Modal from "react-modal";
 
