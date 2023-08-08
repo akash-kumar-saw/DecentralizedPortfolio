@@ -4,7 +4,7 @@ const Hireme = () => {
 
   const HiremeStruct = () => {
     const para = "";
-    const imamge = "";
+    const image = "";
     const btnText = "";
   }
 

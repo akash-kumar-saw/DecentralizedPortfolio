@@ -1,4 +1,4 @@
-import { content } from "../constant/Content";
+import {useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,16 +10,33 @@ import { Pagination } from "swiper";
 import { useState } from "react";
 
 const Testimonials = () => {
-  const { Testimonials } = content;
+
+  const TestimonialStruct = () => {
+    const review = "";
+    const image = "";
+    const designation = "";
+  }
+
+  const [Testimonials, setTestimonials] = useState(TestimonialStruct[5]);
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const testimonials = await contract.testimonials();
+      setTestimonials(testimonials);
+    }
+    contract && Func();
+  },[state])
+
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <section>
       <div className="md:container px-5 pt-14">
         <h2 className="title" data-aos="fade-down">
-          {Testimonials.title}
+        Testimonials
         </h2>
         <h4 className="subtitle" data-aos="fade-down">
-          {Testimonials.subtitle}
+        MY CLIENTS REVIEW
         </h4>
         <br />
         <Swiper
@@ -38,7 +55,7 @@ const Testimonials = () => {
           modules={[Pagination]}
           className="md:h-96 h-[50rem] max-w-3xl"
         >
-          {Testimonials.testimonials_content.map((content, i) => (
+          {Testimonials.map((content, i) => (
             <SwiperSlide key={i}>
               <div
                 className={` duration-500 bg-bg_light_primary mx-8 border-2 
@@ -46,7 +63,7 @@ const Testimonials = () => {
                border-slate-200 md:flex-row flex-col
                 ${activeIndex !== i && "scale-75 blur-sm"}`}
               >
-                <img src={content.img} alt="..." className="h-24" />
+                <img src={content.image} alt="..." className="h-24" />
                 <div>
                   <p className="sm:text-base text-sm">{content.review}</p>
                   <br />

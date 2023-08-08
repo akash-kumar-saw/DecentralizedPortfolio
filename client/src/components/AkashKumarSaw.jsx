@@ -10,7 +10,6 @@ const AkashKumarSaw = ({state}) => {
   }
 
   const HeroContentStruct = () => {
-    const id = 0;
     const count = "";
     const text = "";
   }

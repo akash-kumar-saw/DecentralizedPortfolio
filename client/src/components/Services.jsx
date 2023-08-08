@@ -1,19 +1,35 @@
-import { content } from "../constant/Content";
+import { useEffect, useState } from "react";
 
 const Services = () => {
-  const { services } = content;
+
+  const ServiceStruct = () => {
+    const title = "";
+    const para = "";
+  }
+
+  const [services, setServices] = useState(ServiceStruct[5]);
+
+  useEffect(()=>{
+    const {contract}=state;
+    const Func=async()=>{
+      const services = await contract.services();
+      setServices(services);
+    }
+    contract && Func();
+  },[state])
+
   return (
     <section id="services">
       <div className="md:container px-5 py-14">
         <h2 className="title" data-aos="fade-down">
-          {services.title}
+        Services
         </h2>
         <h4 className="subtitle" data-aos="fade-down">
-          {services.subtitle}
+        WHAT I OFFER
         </h4>
         <br />
         <div className="flex gap-5 justify-between flex-wrap group">
-          {services.service_content.map((content, i) => (
+          {services.map((content, i) => (
             <div
               key={i}
               data-aos="fade-up"
