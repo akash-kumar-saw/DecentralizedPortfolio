@@ -1,4 +1,4 @@
-# Blockchain-Powered Portfolio
+# DecentralizedPortfolio - Blockchain-Powered Portfolio
 
 Welcome to my Blockchain-Powered Portfolio! This repository showcases my skills and experience as a Blcokchain Developer. The data for this portfolio is sourced from an Ethereum smart contract deployed on the **Sepolia** testnet.
 
