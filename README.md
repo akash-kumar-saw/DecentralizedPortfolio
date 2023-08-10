@@ -16,7 +16,7 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository: `git clone https://github.com/akash-kumar-saw/DecentralizedPortfolio`
 2. Navigate to the project directory: `cd DecentralizedPortfolio/client`
-3. Install dependencies: `npm install`
+3. Install dependencies: `yarn install`
 4. Start the development server: `npm run dev`
 
 ## Features
