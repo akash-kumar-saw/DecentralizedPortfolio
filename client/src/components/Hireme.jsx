@@ -31,13 +31,13 @@ const Hireme = () => {
         <br />
         <div className="flex items-center md:flex-row flex-col-reverse ">
           <img
-            src={Hireme.image}
+            src={"https://gateway.pinata.cloud/ipfs/"+Hireme.image}
             alt="..."
             data-aos="fade-right"
             className="max-w-sm md:block hidden"
           />
           <img
-            src={Hireme.image}
+            src={"https://gateway.pinata.cloud/ipfs/"+Hireme.image}
             data-aos="fade-up"
             alt="..."
             className="max-w-sm md:hidden"

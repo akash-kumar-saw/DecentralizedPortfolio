@@ -78,7 +78,7 @@ const AkashKumarSaw = ({state}) => {
         {/* sec col */}
         <div className="md:h-[30rem] h-96">
           <img
-            src={hero.image}
+            src={"https://gateway.pinata.cloud/ipfs/"+hero.image}
             data-aos="slide-up"
             alt="..."
             className="h-full object-cover"

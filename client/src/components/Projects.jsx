@@ -59,7 +59,7 @@ const Projects = () => {
                 key={i}
                 className="cursor-pointer bg-white group rounded-3xl p-5 border-b-8 border-[#FAF9FD] h-fit"
               >
-                <img className="group-hover:scale-105 duration-200" src={content.image} alt="..." />
+                <img className="group-hover:scale-105 duration-200" src={"https://gateway.pinata.cloud/ipfs/"+content.image} alt="..." />
                 <div className="flex flex-col gap-1 mt-2">
                   <h5 className="font-bold font-Poppins">{content.title}</h5>
                   <button className="font-bold text-gray self-end">

@@ -62,7 +62,7 @@ const Testimonials = () => {
                border-slate-200 md:flex-row flex-col
                 ${activeIndex !== i && "scale-75 blur-sm"}`}
               >
-                <img src={content.image} alt="..." className="h-24" />
+                <img src={"https://gateway.pinata.cloud/ipfs/"+content.image} alt="..." className="h-24" />
                 <div>
                   <p className="sm:text-base text-sm">{content.review}</p>
                   <br />
