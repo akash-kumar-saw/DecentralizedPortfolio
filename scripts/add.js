@@ -12,7 +12,7 @@ const contract = new ethers.Contract(contractAddress, ABI, signer);
 async function addHero() {
     const title = "DevOps & Blockchain";
     const subtitle = "Engineer";
-    const image = "https://gateway.pinata.cloud/ipfs/QmXgjnS7MLSB2sdmGUtCv588FBw6QvuttfFne7A31h8X1k/Hero.png";
+    const image = "QmXgjnS7MLSB2sdmGUtCv588FBw6QvuttfFne7A31h8X1k/Hero.png";
     console.log('Adding Hero...');
     var transactionResponse = await contract.addHero(title, subtitle, image);
     console.log('Hero Added Successfully!');
