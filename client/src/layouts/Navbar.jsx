@@ -1,9 +1,36 @@
 import { useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { createElement } from "react";
+import { TbSmartHome } from "react-icons/tb";
+import { BiUser } from "react-icons/bi";
+import { RiServiceLine } from "react-icons/ri";
+import { MdOutlinePermContactCalendar } from "react-icons/md";
+import { IoCodeSlash } from 'react-icons/io5';
 
 const Navbar = () => {
-  const { nav } = content;
+  const nav = [
+    {
+      link: "#home",
+      icon: TbSmartHome,
+    },
+    {
+      link: "#skills",
+      icon: BiUser,
+    },
+    {
+      link: "#services",
+      icon: RiServiceLine,
+    },
+    {
+      link: "#projects",
+      icon: IoCodeSlash,
+    },
+    {
+      link: "#contact",
+      icon: MdOutlinePermContactCalendar,
+    },
+  ]
+
   const [showMenu, setShowMenu] = useState(false);
   const [active, setActive] = useState(0);
 
