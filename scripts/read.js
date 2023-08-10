@@ -1,11 +1,11 @@
-import ABI from "./Abi.json"
-const ethers = require("ethers");
+const ABI = require('./Abi.json');
+const ethers = require('ethers');
 
 const contractAddress = '0xA5903D66c9c03824015854115E2C73591E5b55E2';
 
 const provider = new ethers.providers.JsonRpcProvider('http://https://rpc.ankr.com/eth_sepolia:8545');
 
-const signer = new ethers.Wallet('0xYourPrivateKeyOrAddress', provider);
+const signer = new ethers.Wallet('0xYourPrivateKey', provider);
 
 const contract = new ethers.Contract(contractAddress, ABI, signer);
 
