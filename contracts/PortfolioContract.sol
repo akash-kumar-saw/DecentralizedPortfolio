@@ -62,11 +62,11 @@ contract PortfolioContract{
     Hireme public hireme;
     Contact public contact;
 
-    uint heroCount;
-    uint skillsCount;
-    uint servicesCount;
-    uint projectsCount;
-    uint testimonialsCount;
+    uint heroCount=0;
+    uint skillsCount=0;
+    uint servicesCount=0;
+    uint projectsCount=0;
+    uint testimonialsCount=0;
 
     address public owner;
 
