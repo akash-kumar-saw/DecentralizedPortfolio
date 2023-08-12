@@ -1,21 +1,21 @@
-// import content
 import { useEffect, useState } from "react";
 
 const AkashKumarSaw = ({state}) => {
-
-  const HeroStruct = () => {
-    const title = "";
-    const subTitle = "";
-    const image = "";
-  }
-
-  const HeroContentStruct = () => {
-    const count = "";
-    const text = "";
-  }
   
-  const [hero, setHero] = useState(HeroStruct);
-  const [hero_content, setHeroContent] = useState(HeroContentStruct[3]);
+  const [hero, setHero] = useState(
+    {
+      title: "",
+      subTitle: "",
+      image: ""
+    });
+
+  const [hero_content, setHeroContent] = useState(
+    [
+      {
+        count: "",
+        text: ""
+      },
+    ]);
 
   useEffect(()=>{
     const {contract}=state;

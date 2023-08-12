@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
-const Services = () => {
+const Services = ({state}) => {
 
-  const ServiceStruct = () => {
-    const title = "";
-    const para = "";
-  }
-
-  const [services, setServices] = useState(ServiceStruct[5]);
+  const [Services, setServices] = useState(
+    [
+      {
+        title: "",
+        para: ""
+      },
+    ]
+  );
 
   useEffect(()=>{
     const {contract}=state;
@@ -29,7 +31,7 @@ const Services = () => {
         </h4>
         <br />
         <div className="flex gap-5 justify-between flex-wrap group">
-          {services.map((content, i) => (
+          {Services.map((content, i) => (
             <div
               key={i}
               data-aos="fade-up"

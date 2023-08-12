@@ -8,15 +8,17 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 
-const Testimonials = () => {
+const Testimonials = ({state}) => {
 
-  const TestimonialStruct = () => {
-    const review = "";
-    const image = "";
-    const designation = "";
-  }
-
-  const [Testimonials, setTestimonials] = useState(TestimonialStruct[5]);
+  const [Testimonials, setTestimonials] = useState(
+    [
+      {
+        review: "",
+        image: "",
+        designation: ""
+      },
+    ]
+  );
 
   useEffect(()=>{
     const {contract}=state;

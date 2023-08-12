@@ -9,16 +9,15 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 
-const Projects = () => {
-
-  const ProjectStruct = () => {
-    const title = "";
-    const image = "";
-    const githubLink = "";
-  }
-
+const Projects = ({state}) => {
   
-  const [Projects, setProjects] = useState(ProjectStruct[5]);
+  const [Projects, setProjects] = useState([
+    {
+      title: "",
+      image: "",
+      githubLink: "",
+    },
+  ]);
 
   useEffect(()=>{
     const {contract}=state;

@@ -1,18 +1,17 @@
 import { createElement, useRef, useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { GrMail } from "react-icons/gr";
 
 
-const Contact = () => {
+const Contact = ({state}) => {
 
-  const contact = ()=> {
-    const email = "";
-    const whatsapp = "";
-    const github = "";
-  }
-
-  const [Contact, setContact] = useState(contact);
+  const [Contact, setContact] = useState(
+    {
+      email:"",
+      whatsapp:"",
+      github:""
+    });
 
   useEffect(()=>{
     const {contract}=state;

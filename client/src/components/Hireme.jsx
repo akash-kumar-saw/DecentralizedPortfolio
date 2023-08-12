@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
-const Hireme = () => {
+const Hireme = ({state}) => {
 
-  const HiremeStruct = () => {
-    const para = "";
-    const image = "";
-    const btnText = "";
-  }
-
-  const [Hireme, setHireme] = useState(HiremeStruct);
+  const [Hireme, setHireme] = useState(
+    {
+      para: "",
+      image: "",
+      btnText: ""
+    });
 
   useEffect(()=>{
     const {contract}=state;

@@ -20,7 +20,7 @@ const customStyles = {
 };
 Modal.setAppElement("#root");
 
-const Skills = () => {
+const Skills = ({state}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectSkill, setSelectSkill] = useState(null);
 
@@ -32,12 +32,16 @@ const Skills = () => {
     setIsOpen(false);
   }
 
-  const SkillStruct = () => {
-    const name = "";
-    const skill = [30];
-  }
-
-  const [skills, setskills] = useState(SkillStruct[5]);
+  const [skills, setskills] = useState(
+    [
+      {
+        name: "",
+        skill: [
+          "",
+        ]
+      },
+    ]
+  );
 
   useEffect(()=>{
     const {contract}=state;

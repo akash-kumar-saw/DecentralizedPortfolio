@@ -8,7 +8,7 @@ import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
 import Hireme from "./components/Hireme";
 import Contact from "./components/Contact";
-import Wallet from "./components/Wallet";
+import Wallet from "./layouts/Wallet";
 
 import { useEffect } from "react";
 // Animation package
@@ -38,14 +38,14 @@ const App = () => {
   return (
     <div className="">
       <Wallet saveState={saveState} />
-      <Navbar saveState={saveState} />
-      <AkashKumarSaw saveState={saveState} />
-      <Skills saveState={saveState} />
-      <Service saveState={saveState} />
-      <Projects saveState={saveState} />
-      <Testimonials saveState={saveState} />
-      <Hireme saveState={saveState} />
-      <Contact saveState={saveState} />
+      <Navbar />
+      <AkashKumarSaw state={saveState} />
+      <Skills state={saveState} />
+      <Service state={saveState} />
+      <Projects state={saveState} />
+      <Testimonials state={saveState} />
+      <Hireme state={saveState} />
+      <Contact state={saveState} />
       <footer className="p-3 text-center">
         <h6>Akash Kumar Saw</h6>
         <p>2023 © All CopyRights Reserved</p>
