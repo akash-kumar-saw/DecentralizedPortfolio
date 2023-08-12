@@ -1,7 +1,7 @@
 const ABI = require('./ABI.json');
 const ethers = require('ethers');
 
-const contractAddress = '0xA5903D66c9c03824015854115E2C73591E5b55E2';
+const contractAddress = '0x258F818f774486B9f24a23e8F8a3805e71B4D02A';
 
 const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/eth_sepolia');
 
@@ -16,22 +16,25 @@ async function main () {
         console.log('Hero:\n', hero);
 
         console.log('Loading Hero Content...');
-        const heroContent = await contract.heroContent();
+        const heroContent = await contract.heroContent(0);
         console.log('Hero Content:\n', heroContent);
 
 
         console.log('Loading Skills...');
-        const skills = await contract.skills();
+        const skills = await contract.skills(0);
         console.log('Skills:\n', skills);
 
 
         console.log('Loading Services...');
-        const services = await contract.services();
+        const services = await contract.services(0);
         console.log('Services:\n', services);
 
+        console.log('Loading Projects...');
+        const projects = await contract.projects(0);
+        console.log('Services:\n', projects);
 
         console.log('Loading Testimonials...');
-        const testimonials = await contract.testimonials();
+        const testimonials = await contract.testimonials(0);
         console.log('Testimonials:\n', testimonials);
 
 

@@ -1,12 +1,11 @@
 const ABI = require('./ABI.json');
 const ethers = require('ethers');
 
-const contractAddress = '0xA5903D66c9c03824015854115E2C73591E5b55E2';
+const contractAddress = '0x258F818f774486B9f24a23e8F8a3805e71B4D02A';
 
 const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/eth_sepolia');
 
 const signer = new ethers.Wallet('0xYOUR_PRIVATE_KEY', provider);
-
 const contract = new ethers.Contract(contractAddress, ABI, signer);
 
 async function addHero() {
@@ -14,7 +13,7 @@ async function addHero() {
     const subtitle = "Engineer";
     const image = "QmXgjnS7MLSB2sdmGUtCv588FBw6QvuttfFne7A31h8X1k/Hero.png";
     console.log('Adding Hero...');
-    var transactionResponse = await contract.addHero(title, subtitle, image);
+    const transactionResponse = await contract.addHero(title, subtitle, image);
     console.log('Hero Added Successfully!');
     console.log('Transaction Hash:', transactionResponse.hash);
 }
@@ -23,14 +22,36 @@ async function addHeroContent() {
     const count = "10+";
     const text = "Proficient in coding across a spectrum of 10+ languages";
     console.log('Adding Hero Content...');
-    var transactionResponse = await contract.addHeroContent(count, text);
+    const transactionResponse = await contract.addHeroContent(count, text);
     console.log('Hero Content Added Successfully!');
     console.log('Transaction Hash:', transactionResponse.hash);
 }
 
+async function addSkill() {
+    const name = "BlockChain Developer"
+    const skills = [
+        "JavaScript",
+        "Python",
+        "Web3.js",
+        "Ethers.js",
+        "Web3.py",
+        "Solidity",
+        "ChainLink/Oracle",
+    ]
+    while (skills.length < 30) {
+        skills.push(" ");
+    }
+    
+    console.log('Adding Skill...');
+    const transactionResponse = await contract.addSkill(name, skills);
+    console.log('Skill Added Successfully!');
+    console.log('Transaction Hash:', transactionResponse.hash);
+}
+
 async function main() {
-    await addHero();
-    await addHeroContent();
+    // await addHero();
+    // await addHeroContent();
+    // await addSkill();
 }
 
 main();
