@@ -1,7 +1,7 @@
 const ABI = require('./ABI.json');
 const ethers = require('ethers');
 
-const contractAddress = '0x258F818f774486B9f24a23e8F8a3805e71B4D02A';
+const contractAddress = '0x7166310C7023F1b8b4bcf7804992EdFD4D079591';
 
 const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/eth_sepolia');
 
@@ -36,7 +36,7 @@ async function addSkill() {
         "Ethers.js",
         "Web3.py",
         "Solidity",
-        "ChainLink/Oracle",
+        "ChainLink/Oracle", 
     ]
     while (skills.length < 30) {
         skills.push(" ");
@@ -49,9 +49,9 @@ async function addSkill() {
 }
 
 async function main() {
-    // await addHero();
-    // await addHeroContent();
-    // await addSkill();
+    await addHero();
+    await addHeroContent();
+    await addSkill();
 }
 
 main();
