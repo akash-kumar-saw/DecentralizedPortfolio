@@ -18,7 +18,7 @@ contract PortfolioContract{
     struct Skill{
         uint id;
         string name;
-        string[30] skills;
+        string skills;
     }
 
     struct Service{
@@ -62,11 +62,11 @@ contract PortfolioContract{
     mapping(uint => Project) public projects;
     mapping(uint => Testimonial) public testimonials;
 
-    uint heroCount=0;
-    uint skillsCount=0;
-    uint servicesCount=0;
-    uint projectsCount=0;
-    uint testimonialsCount=0;
+    uint public heroCount=0;
+    uint public skillsCount=0;
+    uint public servicesCount=0;
+    uint public projectsCount=0;
+    uint public testimonialsCount=0;
 
     address public owner;
 
@@ -112,16 +112,15 @@ contract PortfolioContract{
 
     function deleteHeroContent(uint _heroCount) external  onlyOwner{
         heroContent[_heroCount] = HeroContent(_heroCount, "", "");
-        heroCount=0;
     }
 
     //Skill
-    function addSkill(string calldata _name,string[30] calldata _skills) external onlyOwner{
+    function addSkill(string calldata _name,string calldata _skills) external onlyOwner{
         skills[skillsCount] = Skill(skillsCount, _name, _skills);
         skillsCount++;
     }
 
-    function changeSkill(uint _skillsCount, string calldata _name,string[30] calldata _skills) external onlyOwner{
+    function changeSkill(uint _skillsCount, string calldata _name,string calldata _skills) external onlyOwner{
         skills[_skillsCount] = Skill(_skillsCount, _name, _skills);
     }
 
@@ -130,8 +129,7 @@ contract PortfolioContract{
     }
 
     function deleteSkill(uint _skillsCount) external  onlyOwner{
-        skills[_skillsCount] = Skill(_skillsCount, "", [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]);
-        skillsCount=0;
+        skills[_skillsCount] = Skill(_skillsCount, "", "");
     }
 
     //Service
@@ -150,7 +148,6 @@ contract PortfolioContract{
 
     function deleteService(uint _servicesCount) external  onlyOwner{
         services[_servicesCount] = Service(_servicesCount, "", "");
-        servicesCount=0;
     }
 
     //Project
@@ -169,8 +166,6 @@ contract PortfolioContract{
 
     function deleteProject(uint _projectsCount) external  onlyOwner{
         projects[_projectsCount] = Project(_projectsCount, "", "", "");
-            
-        projectsCount=0;
     }
 
     //Testimonial
@@ -189,8 +184,6 @@ contract PortfolioContract{
 
     function deleteTesimonial(uint _testimonialsCount) external  onlyOwner{
         testimonials[_testimonialsCount] = Testimonial(_testimonialsCount, "", "", "");
-            
-        testimonialsCount=0;
     }
 
     //Hire Me
