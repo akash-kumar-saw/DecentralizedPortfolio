@@ -11,21 +11,27 @@ import { Pagination } from "swiper";
 
 const Projects = ({state}) => {
   
-  const [Projects, setProjects] = useState([
-    {
-      title: "",
-      image: "",
-      githubLink: "",
-    },
-  ]);
+  const [Projects, setProjects] = useState([]);
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const projects = await contract.projects();
-      setProjects(projects);
+
+    const Func=async(id)=>{
+      const content = await contract.readProject(id);
+      return (content);
     }
-    contract && Func();
+
+    const FuncAll = async () => {
+      const array = [];
+      const contentCount = await contract.projectsCount();
+      for (let i = 0; i < contentCount; i++) {
+        const content = await Func(i);
+        array.push(content);
+      }
+      setProjects(array);
+    };
+
+    contract && FuncAll();
   },[state])
 
   return (

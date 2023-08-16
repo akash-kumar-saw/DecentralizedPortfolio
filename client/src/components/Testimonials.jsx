@@ -10,23 +10,27 @@ import { Pagination } from "swiper";
 
 const Testimonials = ({state}) => {
 
-  const [Testimonials, setTestimonials] = useState(
-    [
-      {
-        review: "",
-        image: "",
-        designation: ""
-      },
-    ]
-  );
+  const [Testimonials, setTestimonials] = useState([]);
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const testimonials = await contract.testimonials();
-      setTestimonials(testimonials);
+
+    const Func=async(id)=>{
+      const content = await contract.readTestimonial(id);
+      return (content)
     }
-    contract && Func();
+
+    const FuncAll = async () => {
+      const array = [];
+      const contentCount = await contract.testimonialsCount();
+      for (let i = 0; i < contentCount; i++) {
+        const content = await Func(i);
+        array.push(content);
+      }
+      setTestimonials(array);
+    };
+
+    contract && FuncAll();
   },[state])
 
   const [activeIndex, setActiveIndex] = useState(0);

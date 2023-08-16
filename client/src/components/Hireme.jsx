@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 
 const Hireme = ({state}) => {
 
-  const [Hireme, setHireme] = useState(
-    {
-      para: "",
-      image: "",
-      btnText: ""
-    });
+  const [Hireme, setHireme] = useState({});
 
   useEffect(()=>{
     const {contract}=state;
+
     const Func=async()=>{
-      const hireme = await contract.hireme();
-      setHireme(hireme);
+      const content = await contract.readHireme();
+      setHireme(content);
     }
     contract && Func();
+    
   },[state])
 
   return (
@@ -50,7 +47,7 @@ const Hireme = ({state}) => {
             <br />
             <a href="#contact">
             <button className="btn bg-dark_primary text-white">
-              {Hireme.btnText}
+              Hire Me
             </button>
             </a>
           </div>

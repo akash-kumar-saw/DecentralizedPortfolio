@@ -6,18 +6,14 @@ import { GrMail } from "react-icons/gr";
 
 const Contact = ({state}) => {
 
-  const [Contact, setContact] = useState(
-    {
-      email:"",
-      whatsapp:"",
-      github:""
-    });
+  const [Contact, setContact] = useState({});
 
   useEffect(()=>{
     const {contract}=state;
+
     const Func=async()=>{
-      const contact = await contract.contact();
-      setContact(contact);
+      const content = await contract.readContact();
+      setContact(content);
     }
     contract && Func();
   },[state])

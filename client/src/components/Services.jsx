@@ -2,22 +2,27 @@ import { useEffect, useState } from "react";
 
 const Services = ({state}) => {
 
-  const [Services, setServices] = useState(
-    [
-      {
-        title: "",
-        para: ""
-      },
-    ]
-  );
+  const [Services, setServices] = useState([]);
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const services = await contract.services();
-      setServices(services);
+
+    const Func=async(id)=>{
+      const content = await contract.readService(id);
+      return (content)
     }
-    contract && Func();
+
+    const FuncAll = async () => {
+      const array = [];
+      const contentCount = await contract.servicesCount();
+      for (let i = 0; i < contentCount; i++) {
+        const content = await Func(i);
+        array.push(content);
+      }
+      setServices(array);
+    };
+
+    contract && FuncAll();
   },[state])
 
   return (

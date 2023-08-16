@@ -2,37 +2,41 @@ import { useEffect, useState } from "react";
 
 const AkashKumarSaw = ({state}) => {
   
-  const [hero, setHero] = useState(
-    {
-      title: "",
-      subTitle: "",
-      image: ""
-    });
+  const [hero, setHero] = useState({});
 
-  const [hero_content, setHeroContent] = useState(
-    [
-      {
-        count: "",
-        text: ""
-      },
-    ]);
+  const [heroContent, setHeroContent] = useState([]);
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const hero = await contract.hero();
-      setHero(hero);
+
+    const Func = async()=>{
+      const content = await contract.readHero();
+      setHero(content);
     }
     contract && Func();
+    
   },[state])
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const heroContent = await contract.heroContent();
-      setHeroContent(heroContent);
+
+    const Func = async(id)=>{
+      const content = await contract.readHeroContent(id);
+      return (content)
     }
-    contract && Func();
+
+    const FuncAll = async () => {
+      const array = [];
+      const contentCount = await contract.heroCount();
+      for (let i = 0; i < contentCount; i++) {
+        const content = await Func(i);
+        array.push(content);
+      }
+      setHeroContent(array);
+    };
+
+    contract && FuncAll();
+    
   },[state])
 
   return (
@@ -60,7 +64,7 @@ const AkashKumarSaw = ({state}) => {
             </a>
           </div>
           <div className="flex flex-col gap-10 mt-10">
-            {hero_content.map((content, i) => (
+            {heroContent.map((content, i) => (
               <div
                 key={i}
                 data-aos="fade-down"

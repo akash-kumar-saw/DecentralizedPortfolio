@@ -32,24 +32,27 @@ const Skills = ({state}) => {
     setIsOpen(false);
   }
 
-  const [skills, setskills] = useState(
-    [
-      {
-        name: "",
-        skill: [
-          "",
-        ]
-      },
-    ]
-  );
+  const [skills, setskills] = useState([]);
 
   useEffect(()=>{
     const {contract}=state;
-    const Func=async()=>{
-      const skill = await contract.skills();
-      setHero(skill);
+
+    const Func=async(id)=>{
+      const content = await contract.readSkill(id);
+      return (content);
     }
-    contract && Func();
+
+    const FuncAll = async () => {
+      const array = [];
+      const contentCount = await contract.skillsCount();
+      for (let i = 0; i < contentCount; i++) {
+        const content = await Func(i);
+        array.push(content);
+      }
+      setHero(array);
+    };
+
+    contract && FuncAll();
   },[state])
 
   return (
