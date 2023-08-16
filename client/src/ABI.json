@@ -79,11 +79,6 @@
 				"internalType": "string",
 				"name": "_image",
 				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_btnText",
-				"type": "string"
 			}
 		],
 		"name": "addHireme",
@@ -253,11 +248,6 @@
 				"internalType": "string",
 				"name": "_image",
 				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_btnText",
-				"type": "string"
 			}
 		],
 		"name": "changeHireme",
@@ -392,6 +382,92 @@
 	},
 	{
 		"inputs": [],
+		"name": "deleteContact",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deleteHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_heroCount",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteHeroContent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deleteHireme",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_projectsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_servicesCount",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteService",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_skillsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteSkill",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_testimonialsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "deleteTesimonial",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "hero",
 		"outputs": [
 			{
@@ -455,11 +531,6 @@
 				"internalType": "string",
 				"name": "image",
 				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "btnText",
-				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -507,6 +578,281 @@
 				"internalType": "string",
 				"name": "githubLink",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "readContact",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "whatsapp",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "github",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Contact",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "readHero",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "subTitle",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Hero",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_heroCount",
+				"type": "uint256"
+			}
+		],
+		"name": "readHeroContent",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "count",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.HeroContent",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "readHireme",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "para",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Hireme",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_projectsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "readProject",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "githubLink",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Project",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_servicesCount",
+				"type": "uint256"
+			}
+		],
+		"name": "readService",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "para",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Service",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_skillsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "readSkill",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string[30]",
+						"name": "skills",
+						"type": "string[30]"
+					}
+				],
+				"internalType": "struct PortfolioContract.Skill",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_testimonialsCount",
+				"type": "uint256"
+			}
+		],
+		"name": "readTestimonial",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "review",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
+					}
+				],
+				"internalType": "struct PortfolioContract.Testimonial",
+				"name": "",
+				"type": "tuple"
 			}
 		],
 		"stateMutability": "view",
