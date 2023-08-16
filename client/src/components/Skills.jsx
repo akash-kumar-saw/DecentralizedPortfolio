@@ -47,9 +47,10 @@ const Skills = ({state}) => {
       const contentCount = await contract.skillsCount();
       for (let i = 0; i < contentCount; i++) {
         const content = await Func(i);
-        array.push(content);
+        const skills = content.skills.split(','); // Split the comma-separated string into an array
+        array.push({ id: content.id, name: content.name, skills: skills });
       }
-      setHero(array);
+      setskills(array);
     };
 
     contract && FuncAll();
@@ -64,13 +65,12 @@ const Skills = ({state}) => {
         style={customStyles}
       >
         <div className="flex items-center gap-2">
-          <img className="h-10" src={selectSkill?.logo} alt="..." />
           <h6>{selectSkill?.name}</h6>
         </div>
         <br />
         <div className="max-h-[300px] overflow-auto" >
           <ul className="list-decimal px-8 font-Poppins sm:text-sm text-xs !leading-5">
-            {selectSkill?.map((tech, index) => (
+            {selectSkill?.skills.map((tech, index) => (
               <li key={index}>{tech}</li>
             ))}
           </ul>

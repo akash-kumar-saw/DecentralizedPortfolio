@@ -41,7 +41,7 @@ const Contact = ({state}) => {
               </div>
               <div className="flex items-center gap-2">
                 <h4 className="text-white">{createElement(FaWhatsapp)}</h4>
-                <a className="font-Poppins" href={"https://wa.me/${Contact.whatsapp}"} target="_blank">
+                <a className="font-Poppins" href={"https://wa.me/"+Contact.whatsapp} target="_blank">
                   {Contact.whatsapp}
                 </a>
               </div>
