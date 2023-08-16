@@ -10,7 +10,7 @@ const Wallet =({saveState})=>{
 
       const connectWallet =async()=>{
         try{
-          const contractAddress = "0x7166310C7023F1b8b4bcf7804992EdFD4D079591";
+          const contractAddress = "0x5441536C344f1023f8C970c3E39AB6C4Fe39D938";
           if (window.ethereum) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const accounts = await provider.send("eth_requestAccounts", []);
