@@ -39,13 +39,13 @@ const App = () => {
     <div className="">
       <Wallet saveState={saveState} />
       <Navbar />
-      <AkashKumarSaw state={saveState} />
-      <Skills state={saveState} />
-      <Service state={saveState} />
-      <Projects state={saveState} />
-      <Testimonials state={saveState} />
-      <Hireme state={saveState} />
-      <Contact state={saveState} />
+      <AkashKumarSaw state={state} />
+      <Skills state={state} />
+      <Service state={state} />
+      <Projects state={state} />
+      <Testimonials state={state} />
+      <Hireme state={state} />
+      <Contact state={state} />
       <footer className="p-3 text-center">
         <h6>Akash Kumar Saw</h6>
         <p>2023 © All CopyRights Reserved</p>
