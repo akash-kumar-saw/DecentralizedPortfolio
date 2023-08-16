@@ -135,9 +135,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "string[30]",
+				"internalType": "string",
 				"name": "_skills",
-				"type": "string[30]"
+				"type": "string"
 			}
 		],
 		"name": "addSkill",
@@ -319,9 +319,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "string[30]",
+				"internalType": "string",
 				"name": "_skills",
-				"type": "string[30]"
+				"type": "string"
 			}
 		],
 		"name": "changeSkill",
@@ -520,6 +520,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "heroCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "hireme",
 		"outputs": [
 			{
@@ -578,6 +591,19 @@
 				"internalType": "string",
 				"name": "githubLink",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "projectsCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -804,9 +830,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string[30]",
+						"internalType": "string",
 						"name": "skills",
-						"type": "string[30]"
+						"type": "string"
 					}
 				],
 				"internalType": "struct PortfolioContract.Skill",
@@ -888,6 +914,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "servicesCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -906,6 +945,24 @@
 				"internalType": "string",
 				"name": "name",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "skills",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "skillsCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -940,6 +997,19 @@
 				"internalType": "string",
 				"name": "designation",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "testimonialsCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
