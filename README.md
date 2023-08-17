@@ -2,13 +2,16 @@
 
 Welcome to my Blockchain-Powered Portfolio! This repository showcases my skills and experience as a Blcokchain Developer. The data for this portfolio is sourced from the Ethereum smart contract deployed on the **Sepolia** testnet and the images is sourced from the Pinata IPFS server.
 
+## Deployed @ https://akash-kumar-saw.github.io/DecentralizedPortfolio/
+
 ## Tech Stack
 
 - Frontend: ReactJS
 - Build Tool: ViteJS
+- Package Manager: Yarn
 - Blockchain: EthersJS
 - SmartContract: Solidity
-- Solidity Compiler: HardHat 
+- Solidity Compiler: HardHat
 
 ## Getting Started
 
@@ -22,6 +25,7 @@ Follow these steps to set up the project locally:
 ## Features
 
 - Real-time Data from Ethereum Smart Contract
+- Images is sourced IPFS Servers
 - Interactive UI
 - Skill Highlights
 - Serives I Offer
