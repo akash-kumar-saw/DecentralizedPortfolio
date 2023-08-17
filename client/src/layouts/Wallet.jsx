@@ -40,7 +40,7 @@ const Wallet =({saveState})=>{
               <p className="font-semibold text-x text-white">Account : {connected ? "Not Connected" : accountAddress}</p>
             </div>
             <div>
-              {isAndroid  ? <a href="https://metamask.app.link/dapp/sriche.netlify.app/" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 lg:mt-0">FOR SMARTPHONE USERS </a> :
+              {isAndroid  ? <a href="https://metamask.app.link/dapp/akash-kumar-saw.github.io/DecentralizedPortfolio/" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 lg:mt-0">Connect to Metamask</a> :
                 <a href="#" onClick={connectWallet} className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 lg:mt-0">{connected? "Connect to Metamask":"Connected"}</a>}
             </div>
           </div>
