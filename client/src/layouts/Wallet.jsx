@@ -3,10 +3,8 @@ import ABI from "../ABI.json";
 import { ethers } from 'ethers';
 import blockchain from '../assets/blockchain.png';
 
-const Wallet =({saveState})=>{
+const Wallet =({saveState, state})=>{
       const [connected,setConnected]=useState(true);
-      const [accountAddress, setAccountAddress] = useState("");
-      const isAndroid = /android/i.test(navigator.userAgent);
 
       const connectWallet =async()=>{
         try{
@@ -18,8 +16,12 @@ const Wallet =({saveState})=>{
             const contract = new ethers.Contract(contractAddress, ABI, provider);
 
             setConnected(false);
-            setAccountAddress(accounts[0]); 
-            saveState({web3:provider,contract:contract});
+            saveState({web3:provider,contract:contract,address:accounts[0]});
+
+            window.ethereum.on('accountsChanged', (accounts) => {
+              saveState({web3:provider,contract:contract,address:accounts[0]});
+            });
+
           } else {
             console.error('No Ethereum provider found');
           }
@@ -35,14 +37,11 @@ const Wallet =({saveState})=>{
             <img src={blockchain} alt="..." className="w-8 pr-2"/>
             <span className="font-semibold text-xl text-white tracking-tight">Decentralized Portfolio</span>
           </div>
-          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div className="text-sm lg:flex-grow" >
-              <p className="font-semibold text-x text-white">Account : {connected ? "Not Connected" : accountAddress}</p>
+          <div className="w-full block flex-grow md:flex md:items-center md:w-auto">
+            <div className="text-sm md:flex-grow" >
+              <p className="font-semibold text-x text-white">Account : {connected ? "Not Connected" : state.address}</p>
             </div>
-            <div>
-              {isAndroid  ? <a href="https://metamask.app.link/dapp/akash-kumar-saw.github.io/DecentralizedPortfolio/" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 lg:mt-0">Connect to Metamask</a> :
-                <a href="#" onClick={connectWallet} className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 lg:mt-0">{connected? "Connect to Metamask":"Connected"}</a>}
-            </div>
+            <a href="#" onClick={connectWallet} className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark_primary hover:bg-white mt-4 md:mt-0">{connected? "Connect to Metamask":"Connected"}</a>
           </div>
         </nav>
       </>

@@ -28,7 +28,8 @@ const App = () => {
 
   const [state,setState]=useState({
     web3:null,
-    contract:null
+    contract:null,
+    address:null
   })
   const saveState=(state)=>{
     console.log(state);
@@ -37,7 +38,7 @@ const App = () => {
 
   return (
     <div className="">
-      <Wallet saveState={saveState} />
+      <Wallet saveState={saveState} state={state} />
       <Navbar />
       <AkashKumarSaw state={state} />
       <Skills state={state} />
